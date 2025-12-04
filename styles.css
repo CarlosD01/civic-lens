@@ -1,10 +1,59 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Carlos Diaz */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* Root Variables */
 :root {
@@ -40,26 +89,268 @@ body.dark-mode {
 
 /* ///ADD/// Skip Link Styles */
 
+.skip-link {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+text-decoration: none;
+color: var(--watchdog-white);
+font-family: var(--font-body);
+background-color: var(--news-flash);
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
 /* ///ADD/// Navigation Styles */
 
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-self: flex-start;
+  font-size: .75em;
+}
+
+li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--watchdog-white);
+  background-color: var(--news-flash);
+  padding: .5rem;
+  margin-right: 1rem;
+  transition: var(--transition);
+}
+
+li a:hover {
+  background-color: transparent;
+  border: solid 2px var(--news-flash);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+nav label {
+  visibility: hidden;
+}
+
 /* ///ADD/// Global Layout Styles */
+header, footer {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1.5rem;
+}
+
+footer ul {
+  width: 90%;
+  margin: 30px 0;
+}
+
+/* Welcome (Entire Section w/ h2) */
+#welcome {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+#welcome h2 {
+  margin-bottom: .75rem;
+}
+
+/* Still need to bring Welcome elements closer together vertically */
+
+/* Breaking News (Individual Sections)*/
+#breaking-news section {
+  background-color: var(--news-flash);
+  border: solid 2.5px var(--truth-text);
+  color: var(--watchdog-white);
+  padding: .75rem;
+  /* something to align everything to center */
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+#breaking-news section:hover {
+  cursor: pointer;
+  transition: var(--transition);
+  transform: scale(1.05);
+}
+
+/* Breaking News (Entire Section w/ h2) */
+#breaking-news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#breaking-news h2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+/* Featured Stories (Entire section w/ h2) */
+#featured {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+#featured h2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin: .5em 0;
+}
+
+/* Featured Stories (Individual stories) */
+
+#featured section {
+  border: solid 2.5px var(--story-subtitle);
+  box-shadow: var(--shadow);
+  padding: .75rem;
+  max-width: 300px;
+  transition: var(--transition);
+}
+
+#featured section:hover {
+  cursor: pointer;
+  transition: var(--transition);
+  transform: scale(1.05);
+}
+
+/* Notifications Section (connected to Form Section) */
+
+#notifications {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+#notifications h2 {
+  margin-bottom: .75rem;
+}
 
 /* ///ADD/// Global Text Styles */
 
+/* Headings Styling */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* Body Text Styling */
+body {
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+p {
+  font-size: .85em;
+}
+
+blockquote {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  margin: 1.5rem auto 0;
+  font-size: .85em;
+  text-align: center;
+}
+
+/* Form Styling */
+form {
+  font-weight: 300;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  border: solid 2.5px var(--truth-text);
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+fieldset {
+  border: solid 2.5px var(--blue-bulletin);
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+fieldset legend {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+input {
+  display: inline-block;
+}
+
+input[type=submit]{
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  text-transform: capitalize;
+  box-shadow: var(--shadow);
+  width: 100%;
+  padding: .75rem;
+  margin: 0 auto;
+  transition: var(--transition);
+}
+
+input[type=submit]:hover{
+  background-color: var(--watchdog-white);
+  border: solid 2px var(--blue-bulletin);
+  cursor: pointer;
+  color: var(--blue-bulletin);
+  transition: var(--transition);
+}
 
 /* ///ADD/// medium styles 620px */
+@media screen and(min-width: 620px){
+
+}
+
 
 
 /* ///ADD/// large styles 920px */
+@media screen and(min-width: 920px){
+
+}
 
 
 /* ///ADD/// x-large styles 1024px */
+@media screen and(min-width: 1024px){
+  
+}
 
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
 
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: var(--watchdog-white);
+        color: var(--truth-text);
+    }
+}
+
+@media (prefers-color-scheme: light){
+    body {
+        background-color: var(--truth-text);
+        color: var(--watchdog-white);
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    @-webkit-keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+    @keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  /* i think this is if the screen is mobile, then the mobile menu is toggled and makes the dropdown MENU visible */
 }
