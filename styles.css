@@ -90,40 +90,43 @@ body.dark-mode {
 /* ///ADD/// Skip Link Styles */
 
 .skip-link {
-position:absolute;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;
-text-decoration: none;
-color: var(--watchdog-white);
-font-family: var(--font-body);
-background-color: var(--news-flash);
+  left: 50%;
+  padding: .5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  text-decoration: none;
+  color: var(--watchdog-white);
+  font-family: var(--font-body);
+  background-color: var(--news-flash);
+  transition: var(--transition);
 }
 
 .skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
+  transform: translateY(0%);
+  transition: var(--transition);
 }
 
 /* ///ADD/// Navigation Styles */
 
+/* Controls the container holding nav elements */
 ul {
-  list-style-type: none;
   display: flex;
-  justify-self: flex-start;
-  font-size: .75em;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: .5rem;
 }
 
+/* Controls nav elements/buttons */
 li a {
-  text-decoration: none;
+  text-decoration:none;
+  text-align: center;
+  padding: .5rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
   color: var(--watchdog-white);
   background-color: var(--news-flash);
-  padding: .5rem;
-  margin-right: 1rem;
   transition: var(--transition);
 }
 
@@ -134,43 +137,56 @@ li a:hover {
   cursor: pointer;
 }
 
-nav label {
-  visibility: hidden;
-}
+
 
 /* ///ADD/// Global Layout Styles */
 header, footer {
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
-  padding: 1.5rem;
+  width: 100%;
+  justify-items: left;
 }
 
-footer ul {
-  width: 90%;
-  margin: 30px 0;
+header div, footer div {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+  padding: 1rem 0;
+  align-items: center;
+  height:auto;
+}
+
+main{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2%;
 }
 
 /* Welcome (Entire Section w/ h2) */
 #welcome {
-  width: 90%;
-  margin: 2rem auto;
+  width: 100%;
 }
-
-#welcome h2 {
-  margin-bottom: .75rem;
-}
-
-/* Still need to bring Welcome elements closer together vertically */
 
 /* Breaking News (Individual Sections)*/
 #breaking-news section {
   background-color: var(--news-flash);
   border: solid 2.5px var(--truth-text);
   color: var(--watchdog-white);
-  padding: .75rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 90%;
   /* something to align everything to center */
   box-shadow: var(--shadow);
   transition: var(--transition);
+}
+
+#breaking-news video {
+  margin: 0 auto;
+  width: 100%;
 }
 
 #breaking-news section:hover {
@@ -183,9 +199,8 @@ footer ul {
 #breaking-news {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  width: 90%;
-  margin: 0 auto;
+  gap: 1rem;
+  width: 100%;
 }
 
 #breaking-news h2 {
@@ -194,31 +209,31 @@ footer ul {
 }
 
 /* Featured Stories (Entire section w/ h2) */
-#featured {
+#featured-aticles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
   gap: 1rem;
-  width: 90%;
   margin: 1rem auto;
 }
 
-#featured h2 {
+#featured-aticles h2 {
   grid-column-start: 1;
   grid-column-end: -1;
-  margin: .5em 0;
 }
 
 /* Featured Stories (Individual stories) */
 
-#featured section {
+#featured-aticles section {
   border: solid 2.5px var(--story-subtitle);
   box-shadow: var(--shadow);
-  padding: .75rem;
-  max-width: 300px;
+  padding: .5rem;
+  max-width: 325px;
   transition: var(--transition);
+  margin: 0 auto;
 }
 
-#featured section:hover {
+#featured-aticles section:hover {
   cursor: pointer;
   transition: var(--transition);
   transform: scale(1.05);
@@ -226,12 +241,13 @@ footer ul {
 
 /* Notifications Section (connected to Form Section) */
 
-#notifications {
-  width: 90%;
-  margin: 2rem auto;
+#alerts {
+  margin: 1rem auto;
+  width: 100%;
+  border: solid white;
 }
 
-#notifications h2 {
+#alerts h2 {
   margin-bottom: .75rem;
 }
 
@@ -242,32 +258,50 @@ h1, h2, h3 {
   font-family: var(--font-heading);
 }
 
+h1{
+  font-size: 2rem;
+}
+
+h2{
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding-top: 0.25rem;
+}
+
+h3{
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
+}
+
 /* Body Text Styling */
 body {
   font-family: var(--font-body);
-  box-sizing: border-box;
 }
 
-p {
-  font-size: .85em;
+p{
+  line-height: 1.35;
+  max-width: 75ch;
+  padding: 0.5rem 0;
+}
+
+footer p {
+  margin: 1.5rem auto;
 }
 
 blockquote {
   font-family: var(--font-heading);
   font-weight: bold;
-  margin: 1.5rem auto 0;
-  font-size: .85em;
   text-align: center;
+  margin-top: .75rem;
 }
 
 /* Form Styling */
 form {
-  font-weight: 300;
   background-color: var(--news-flash);
   color: var(--watchdog-white);
   border: solid 2.5px var(--truth-text);
   padding: 1rem;
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 fieldset {
@@ -282,7 +316,7 @@ fieldset legend {
   text-transform: uppercase;
 }
 
-input {
+form div {
   display: inline-block;
 }
 
@@ -315,6 +349,7 @@ input[type=submit]:hover{
 /* ///ADD/// large styles 920px */
 @media screen and(min-width: 920px){
 
+
 }
 
 
@@ -328,15 +363,15 @@ input[type=submit]:hover{
 
 @media (prefers-color-scheme: dark){
     body {
-        background-color: var(--watchdog-white);
-        color: var(--truth-text);
+        background-color: var(--truth-text);
+        color: var(--watchdog-white);
     }
 }
 
 @media (prefers-color-scheme: light){
     body {
-        background-color: var(--truth-text);
-        color: var(--watchdog-white);
+        background-color: var(--watchdog-white);
+        color: var(--truth-text);
     }
 }
 
@@ -352,5 +387,7 @@ input[type=submit]:hover{
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
+
+
   /* i think this is if the screen is mobile, then the mobile menu is toggled and makes the dropdown MENU visible */
 }

@@ -10,7 +10,7 @@
 <!-- ADD Open Graph Meta for title, description, image, url, type -->
   <meta name="og:title" content="Civic Lens">
   <meta name="og:description" content="Civic Lens is an independent news organization committed to unbiased reporting, investigative journalism, and truth-driven storytelling.">
-  <meta name="og:image" content="">
+  <meta name="og:image" content="images/placeholder.jpg">
   <meta name="og:url" content="">
   <meta name="og:type" content="website">
 
@@ -32,6 +32,7 @@
       </svg>
     </button>
 
+    <div>
       <h1>Civic Lens</h1>
       <p class="tagline">See Clearly. Know Deeply. Act Justly.</p>
       
@@ -45,13 +46,14 @@
           <li><a href="#social">Social</a></li>
         </ul>
       </nav>
+    </div>
 
   </header>
-  
+  <main id="main">
 <!-- WELCOME SECTION START -->
     <section id="welcome">
-      <h2 id="main">Welcome to Civic Lens</h2>
-      <p>We are an independent news organization dedicated to unbiased reporting, investigative journalism, and truth-driven storytelling. At Civic Lens, our mission is to expose the facts, amplify marginalized voices, and shine light on the systems that shape our society.</p></p>
+      <h2>Welcome to Civic Lens</h2>
+      <p>We are an independent news organization dedicated to unbiased reporting, investigative journalism, and truth-driven storytelling. At Civic Lens, our mission is to expose the facts, amplify marginalized voices, and shine light on the systems that shape our society.</p>
       <blockquote class="tagline">“We don't follow the narrative. We follow the facts.”</blockquote>
     </section>
 <!-- WELCOME SECTION END -->
@@ -65,20 +67,20 @@
           <h3>Federal Investigation Launched into Water Mismanagement in the Southwest</h3>
           <hr>
           <p>The Department of Justice has announced a full investigation into decades of water distribution practices affecting tribal lands and rural communities.</p>
-          <video src="videos/water-management.mp4" width="90%" controls preload="auto"></video>
+          <video src="videos/water-management.mp4" controls preload="auto"></video>
         </section>
 
         <section>
           <h3>Voter Suppression Bill Faces Pushback in State Supreme Court</h3>
           <hr>
           <p>Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.</p>
-          <video src="videos/voter-suppression.mp4" width="90%" controls preload="auto"></video>
+          <video src="videos/voter-suppression.mp4" controls preload="auto"></video>
         </section>
       </section>
 <!-- BREAKING NEWS SECTION END -->
 
 <!-- FEATURED SECTION START -->
-      <section id="featured">
+      <section id="featured-aticles">
 
         <h2>Featured Articles</h2>
 
@@ -158,43 +160,59 @@
 <!-- FEATURED SECTION END -->
 
 <!-- ACCESSIBLE FORM START -->
-      <section id="notifications">
+      <section id="alerts">
 
         <h2>Stay Informed. Stay Empowered.</h2>
         <p>Receive text messages with the news you want to know.</p>
 
         <form method="post" action="https://wp.zybooks.com/form-viewer.php">
         
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" maxlength="25">
-
-          <label for="mobile">Mobile</label>
-          <input type="tel" id="mobile" name="mobile">
+          <div >
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" maxlength="25">
+             
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" name="mobile">
+          </div>
 
           <fieldset>
 
             <legend>Notification Preferences</legend>
-            
-            <input id="news" name="category" type="checkbox" value="news">
-            <label for="news">News</label>
 
-            <input id="politics" name="category" type="checkbox" value="politics">
-            <label for="politics">Politics</label>
+            <div>
+              <input id="news" name="category" type="checkbox" value="news">
+              <label for="news">News</label>
+            </div>
 
-            <input id="weather" name="category" type="checkbox" value="weather">
-            <label for="weather">Weather</label>
+            <div>
+              <input id="politics" name="category" type="checkbox" value="politics">
+              <label for="politics">Politics</label>
+            </div>
 
-            <input id="sports" name="category" type="checkbox" value="sports">
-            <label for="sports">Sports</label>
+            <div>
+              <input id="weather" name="category" type="checkbox" value="weather">
+              <label for="weather">Weather</label>
+            </div>
 
-            <input id="entertainment" name="category" type="checkbox" value="entertainment">
-            <label for="entertainment">Entertainment</label>
+            <div>
+              <input id="sports" name="category" type="checkbox" value="sports">
+              <label for="sports">Sports</label>
+            </div>
 
-            <input id="world" name="category" type="checkbox" value="world">
-            <label for="world">World</label>
+            <div>
+              <input id="entertainment" name="category" type="checkbox" value="entertainment">
+              <label for="entertainment">Entertainment</label>
+            </div>
 
-            <input id="financial" name="category" type="checkbox" value="financial">
-            <label for="financial">Financial</label>
+            <div>
+              <input id="world" name="category" type="checkbox" value="world">
+              <label for="world">World</label>
+            </div>
+
+            <div>
+              <input id="financial" name="category" type="checkbox" value="financial">
+              <label for="financial">Financial</label>
+            </div>
 
           </fieldset>
           
@@ -202,17 +220,20 @@
 
         </form>
       </section>
-
+  </main>
     <footer>
-      <h2>Follow Us</h2>
-        <ul>
-          <li><a href="#Twitter">Twitter/X</a></li>
-          <li><a href="#Instagram">Instagram</a></li>
-          <li><a href="#YouTube">YouTube</a></li>
-          <li><a href="#TikTok">TikTok</a></li>
-          <li><a href="#LinkedIn">LinkedIn</a></li>
-        </ul>
+
+      <div id="socials">
+        <h2>Follow Us</h2>
+          <ul>
+            <li><a href="#Twitter">Twitter/X</a></li>
+            <li><a href="#Instagram">Instagram</a></li>
+            <li><a href="#YouTube">YouTube</a></li>
+            <li><a href="#TikTok">TikTok</a></li>
+            <li><a href="#LinkedIn">LinkedIn</a></li>
+          </ul>
         <p>&copy; 2025 Civic Lens. All rights reserved.</p>
+      </div>
     </footer>
         
   <script>
